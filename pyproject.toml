@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "raglab"
+version = "0.1.0"
+description = "Dependency-light RAG strategies"
+requires-python = ">=3.10"
+dependencies = []
+[project.optional-dependencies]
+pdf = ["pypdf"]
+image = ["Pillow"]
+mcp = ["mcp<2"]
+http = ["httpx"]
+test = ["pytest"]
+[project.scripts]
+raglab-mcp = "raglab.mcp_server:main"
+
+[tool.setuptools.packages.find]
+include = ["raglab*"]
